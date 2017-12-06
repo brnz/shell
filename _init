@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+ln -hfs "$HOME/.shell/_vim" "$HOME/.vim"
+ln -fs "$HOME/.shell/gitignore_global" "$HOME/.gitignore_global"
+ln -fs "$HOME/.shell/vimrc" "$HOME/.vimrc"
+ln -fs "$HOME/.shell/zshrc" "$HOME/.zshrc"
+

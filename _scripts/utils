@@ -1,0 +1,9 @@
+_reset_dock() {
+    defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
+}
+
+_gpu() {
+    local _branch="$(git rev-parse --abbrev-ref HEAD)"
+    git push -u origin "$_branch"
+}
+
