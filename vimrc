@@ -91,8 +91,8 @@ inoremap { {}<Left>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap {{ {
 inoremap {} {}
-" skip over closing character
-inoremap ( ()<Left>
+" skip over closing character  
+inoremap ( ()<Left>  
 inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 " handle quotes
 "inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
@@ -103,5 +103,8 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 
 " load colorscheme
 if filereadable($HOME."/.vim/colors/".theme.".vim")
-  execute "colorscheme ".theme
+    if theme == "solarized"
+        let g:solarized_visibility="low"
+    endif
+    execute "colorscheme ".theme
 endif

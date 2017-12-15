@@ -4,9 +4,9 @@ precmd() {
     local red="%{$fg[red]%}"
     local green="%{$fg[green]%}"
     local reset="%{$reset_color%}"
-    local yellow="%{$fg[yellow]%}" 
-    local white="%{$fg[white]%}" 
-    local blue="%{$fg[blue]%}" 
+    local yellow="%{$fg[yellow]%}"
+    local white="%{$fg[white]%}"
+    local blue="%{$fg[blue]%}"
     # components
     local name="%(!.$red.$green)%n$reset"
     local hostname="$yellow%m$reset"

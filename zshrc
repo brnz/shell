@@ -12,7 +12,7 @@ bindkey -e
 zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit add-zsh-hook colors select-word-style
-compinit
+compinit -i
 colors
 # bash-style word functions
 select-word-style bash
