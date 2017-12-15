@@ -1,9 +1,25 @@
-_reset_dock() {
+#!/bin/bash
+reset_dock() {
     defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 }
 
-_gpu() {
-    local _branch="$(git rev-parse --abbrev-ref HEAD)"
-    git push -u origin "$_branch"
+gpu() {
+    local branch="$(git rev-parse --abbrev-ref HEAD)"
+    git push -u origin "$branch"
 }
 
+gw() {
+    $(_upfind gradlew) "$@"
+}
+
+_upfind() {
+   local dir=$(pwd)
+   while [[ "$dir" != "/" ]]; do
+      local local_path=$(find "$dir" -maxdepth 1 -name $1)
+      if [[ "$local_path" != "" ]]; then
+         echo "$local_path"
+         return
+      fi
+      dir=$(dirname "$dir")
+    done
+}

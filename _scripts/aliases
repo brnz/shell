@@ -1,13 +1,16 @@
+#!/bin/bash
 alias l="ls -G"
 alias la="l -A"
 alias ll="l -hl"
 alias lla="l -Ahl"
 alias lm="ll | more"
 alias reset_dock="_reset_dock"
-# git
+
 alias gch="git checkout"
 alias gc="git commit"
 alias gd="git diff"
 alias gpu="_gpu"
 alias gs="git status"
 
+alias asit="adb shell input text"
+alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"

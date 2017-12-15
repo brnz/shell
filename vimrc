@@ -105,4 +105,3 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 if filereadable($HOME."/.vim/colors/".theme.".vim")
   execute "colorscheme ".theme
 endif
-
