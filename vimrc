@@ -1,6 +1,6 @@
 " define theme 
 let theme="solarized"
-set background=dark
+set background=light
 " backspace key expected behavior
 set backspace=indent,eol,start
 " restore indent after typing hash
@@ -34,7 +34,7 @@ set visualbell
 " show (partial) command in status line
 set showcmd
 " show matching brackets
-set showmatch
+"set showmatch
 " do case insensitive matching
 set ignorecase
 " do smart case matching
@@ -92,8 +92,8 @@ inoremap {<CR> {<CR>}<Esc>O
 inoremap {{ {
 inoremap {} {}
 " skip over closing character  
-inoremap ( ()<Left>  
-inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+"inoremap ( ()<Left>  
+"inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 " handle quotes
 "inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
 "inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"

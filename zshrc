@@ -2,7 +2,7 @@
 # 2) find what's causing source vimrc bugs
 # 3) add timer to quotes completion
 #
-imports=( "_stdlib" "apple_terminal" "aliases" "pretty" "shell" "utils" )
+imports=( "stdlib" "apple_terminal" "aliases" "pretty" "shell" "utils" )
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -20,5 +20,5 @@ select-word-style bash
 bindkey "^[[Z" reverse-menu-complete
 
 for script in $imports; do
-    . "$HOME/.shell/_scripts/$script"
+    . "$HOME/.shell/scripts/$script"
 done

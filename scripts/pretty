@@ -10,42 +10,43 @@ precmd() {
     # components
     local name="%(!.$red.$green)%n$reset"
     local hostname="$yellow%m$reset"
-    local dirname="$white%64<.<%~$reset"
+    #local dirname="$white%64<.<%~$reset"
+    local dirname="$gray%64<.<%~$reset"
     local time="$blue$(date "+%-I:%M%p")$reset"
     local hash="%(!.#.$)"
 
     export PROMPT="
-$name@$hostname:$dirname%) $(_git_status)
+$name@$hostname:$dirname%) $(git_status__)
 $time$hash "
 }
 
-_git_status() {
+git_status__() {
     if $(git rev-parse --is-inside-work-tree 2> /dev/null); then
-        echo "$(_refs)%)"
+        echo "$(refs__)%)"
     else
         echo ""
     fi
 }
 
-_refs() {
+refs__() {
     if [[ "$(git rev-parse --all)" == "" ]]; then
         echo "new"
     else
-        echo $(_branch)
+        echo $(branch__)
     fi
 }
 
-_branch() {
+branch__() {
     local branch="$(git rev-parse --abbrev-ref HEAD)"
     if [[ "$branch" == "HEAD" ]]; then
         local detached="detached@$(git rev-parse --short HEAD)"
         echo "$red$detached$reset"
     else
-        echo $(_porcelain)
+        echo $(porcelain__)
     fi
 }
 
-_porcelain() {
+porcelain__() {
     if [[ "$(git status --porcelain)" == "" ]]; then
         echo "$green$branch$reset"
     else
