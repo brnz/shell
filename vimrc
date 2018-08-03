@@ -1,6 +1,6 @@
 " define theme 
 let theme="solarized"
-set background=light
+set background=dark
 " backspace key expected behavior
 set backspace=indent,eol,start
 " restore indent after typing hash
