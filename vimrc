@@ -108,3 +108,6 @@ if filereadable($HOME."/.vim/colors/".theme.".vim")
     endif
     execute "colorscheme ".theme
 endif
+
+" load runtimepath
+execute pathogen#infect()
