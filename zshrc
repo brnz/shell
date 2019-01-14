@@ -22,3 +22,5 @@ bindkey "^[[Z" reverse-menu-complete
 for script in $imports; do
     . "$HOME/.shell/scripts/$script"
 done
+
+. "$HOME/.bashrc" 2> /dev/null

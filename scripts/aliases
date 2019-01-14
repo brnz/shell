@@ -15,5 +15,9 @@ alias gd="git diff"
 #alias gpu="_gpu"
 alias gs="git status"
 
+alias grhH="git reset --hard HEAD"
+
 alias asit="adb shell input text"
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-features=PreloadMediaEngagementData,AutoplayIgnoreWebAudio,MediaEngagementBypassAutoplayPolicies"

@@ -3,6 +3,10 @@
 #    defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 #}
 
+housekeeping() {
+    git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
+}
+
 gpu() {
     local branch="$(git rev-parse --abbrev-ref HEAD)"
     git push -u origin "$branch"
