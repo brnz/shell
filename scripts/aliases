@@ -17,3 +17,12 @@ alias gs="git status"
 
 alias asit="adb shell input text"
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+search() {
+    if [[ -z "$2" ]]; then
+        find . -iname "*$1*" -type f
+    else
+        find . -iname "*$1*" -type f -exec $2 {} \+
+    fi
+}
+
+alias caesar="rename y/A-Za-z/N-ZA-Mn-za-m/"
